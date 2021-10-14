@@ -26,21 +26,28 @@ fetch('https://ghibliapi.herokuapp.com/films')
 
 
     }
-
-    
-    
     let form = document.querySelector('form')
     .addEventListener('submit', (event) => {
         event.preventDefault()
         const userInput = event.target.review.value;
         const ul = document.querySelector('ul')
         const li = document.createElement('li')
-        li.textContent = userInput;
-        ul.append(li);
+        for (let film of films) {
+            if (dropDown.value === film.title) {
+
+                li.innerHTML = `<strong> / <b>${film.title}</strong>:</b>${userInput}`;
+                ul.append(li);
+        
+        
+                document.querySelector('form').reset();
+            }
 
 
-        document.querySelector('form').reset();
+        }
         }
      )
+
+    
+    
     })
 
