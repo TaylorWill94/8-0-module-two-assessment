@@ -19,7 +19,7 @@ fetch('https://ghibliapi.herokuapp.com/films')
                     let year = film.release_date;
                     let description = film.description;
                     display.innerHTML = 
-                    `<p><strong>${name}</strong></p><p>${year}</p><p>${description}</p>`
+                    `<h3><strong>${name}</strong></h3><p>${year}</p><p>${description}</p>`
                 }
             }
         })
@@ -35,7 +35,7 @@ fetch('https://ghibliapi.herokuapp.com/films')
         for (let film of films) {
             if (dropDown.value === film.title) {
 
-                li.innerHTML = `<strong> / <b>${film.title}</strong>:</b>${userInput}`;
+                li.innerHTML = `<strong><b>${film.title}</strong>:</b> ${userInput}`;
                 ul.append(li);
         
         
